@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="Skeleton-2.0.4/css/normalize.css">
+  <link rel="stylesheet" href="Skeleton-2.0.4/css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="Skeleton-2.0.4/images/favicon.png">
+
+  <!-- Calendar -->
+  <script src="https://code.jquery.com/jquery-1.12.2.min.js"  
+integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anonymous"></script>
+<link rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css'/>
+<script src='fullcalendar-2.6.1/lib/moment.min.js'></script>
+<script src='fullcalendar-2.6.1/fullcalendar.min.js'></script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="section main_navigation" style="padding-top:2%" >
+    <div class="container" >
+      <div class="row" style="margin-top:0%">
+        <div class="two columns">
+           <!--<img class="" src="Skeleton-2.0.4/images/erevu_logo.png" style="margin-top:0%">-->
+           <h5>Cabinet DARTOIS</h5>            
+        </div>
+        <div class="ten columns">
+           <h6>Cabinet - reporting</h6>
+            <!-- Standard buttons -->
+          <button id="agenda">Agenda</button>
+          <button id="compta">Comptabilité</button>
+          <button id="files">Documents</button>
+         <h6>Enregistrer</h6>
+        <!-- Primary buttons -->
+       <button class="button-primary" id="addClient">client</button>
+        <button class="button-primary" id="addDossier">affaire</button>
+        <button class="button-primary" id="addContact">contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section search" style="padding-top:2%" >
+    <div class="container" >
+         <div class="row" style="margin-top:0%">
+         <div class="four columns">
+         <input class="u-full-width" type="search" placeholder="Rechercher" id="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cabinet" id="cabinet" style="display:none;background:#ffffff" >
+    <div class="container" >
+         <div class="row" id="cabView" style="margin-top:5%">
+            <h3></h3>
+            <h6 id="closeViewCabinet" style="float:right"><a href="#">Fermer</a></h6>
+            <div></div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="section client" style="padding-top:2%;">
+  <div class="container">
+  <div class="row" style="margin-top:2%" >
+    <div class="two columns">Two</div>
+    <div class="ten columns">DIX</div>
+  </div>
+</div>
+</div>
+
+
+
+<script>
+
+
+$("button").click(function(){
+  var v = ($(this).html());
+  var i = this.id;
+  if(i.match(/add/g)){v="Enregistrement "+v;}
+  $("#cabView h3").html(v.toUpperCase());
+  $.get( this.id+".php", function( data ) {
+    $("#cabView div").html( data );
+    //alert( "Load was performed." );
+});
+
+$(".cabinet").show();
+
+});
+
+
+$("#closeViewCabinet").click(function(){
+  $("#cabinet").hide();
+})
+
+</script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

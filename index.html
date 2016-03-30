@@ -26,13 +26,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="Skeleton-2.0.4/images/favicon.png">
 
-  <!-- Calendar -->
-  <script src="https://code.jquery.com/jquery-1.12.2.min.js"  
-integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anonymous"></script>
-<link rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css'/>
-<script src='fullcalendar-2.6.1/lib/moment.min.js'></script>
-<script src='fullcalendar-2.6.1/fullcalendar.min.js'></script>
-
 </head>
 <body>
 
@@ -51,12 +44,12 @@ integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anon
             <!-- Standard buttons -->
           <button id="agenda">Agenda</button>
           <button id="compta">Comptabilité</button>
-          <button id="files">Documents</button>
          <h6>Enregistrer</h6>
         <!-- Primary buttons -->
        <button class="button-primary" id="addClient">client</button>
         <button class="button-primary" id="addDossier">affaire</button>
         <button class="button-primary" id="addContact">contact</button>
+        <button class="button-primary" id="files">document</button>
         </div>
       </div>
     </div>
@@ -82,9 +75,7 @@ integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anon
       </div>
     </div>
   </div>
-
-
-<div class="section client" style="padding-top:2%;">
+<div class="section client" style="padding-top:2%;"> 
   <div class="container">
   <div class="row" style="margin-top:2%" >
     <div class="two columns">Two</div>
@@ -94,33 +85,16 @@ integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anon
 </div>
 
 
-
-<script>
-
-
-$("button").click(function(){
-  var v = ($(this).html());
-  var i = this.id;
-  if(i.match(/add/g)){v="Enregistrement "+v;}
-  $("#cabView h3").html(v.toUpperCase());
-  $.get( this.id+".php", function( data ) {
-    $("#cabView div").html( data );
-    //alert( "Load was performed." );
-});
-
-$(".cabinet").show();
-
-});
+<!-- Load JS file -->
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"  
+integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anonymous"></script>
+<link rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css'/>
+<script src='fullcalendar-2.6.1/lib/moment.min.js'></script>
+<script src='fullcalendar-2.6.1/fullcalendar.min.js'></script>
+<script src='js/ui.js'></script>
 
 
-$("#closeViewCabinet").click(function(){
-  $("#cabinet").hide();
-})
-
-</script>
-
-
-
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

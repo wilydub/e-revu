@@ -1,8 +1,11 @@
-<link rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css' />
-<script src='fullcalendar-2.6.1/lib/moment.min.js'></script>
-<script src='fullcalendar-2.6.1/fullcalendar.min.js'></script>
-<script src='fullcalendar-2.6.1/lang/fr.js'></script>
 
+<div class="section calendar" style="padding-top:2%;">
+  <div class="container">
+  <div class="row" style="margin-top:2%" >
+    <div id="calendar"></div>
+  </div>
+</div>
+</div>
 <script>
     // page is now ready, initialize the calendar...
 
@@ -84,10 +87,3 @@ header: {
 
 
 
-<div class="section calendar" style="padding-top:2%;">
-  <div class="container">
-  <div class="row" style="margin-top:2%" >
-    <div id="calendar"></div>
-  </div>
-</div>
-</div>

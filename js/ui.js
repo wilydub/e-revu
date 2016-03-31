@@ -1,20 +1,60 @@
+
+var erevu = (function() {
+
+/*Dir path php file*/
 var php = "php/" ;
 
-$("button").click(function(){
-  var v = ($(this).html());
-  var i = this.id;
-  if(i.match(/add/g)){v="Enregistrement "+v;}
-  $("#cabView h3").html(v.toUpperCase());
-  $.get( php+this.id+".php", function( data ) {
-    $("#cabView div").html( data );
-    //alert( "Load was performed." );
+var id = {'contact':0,'affaire':0};
+
+var uiFn = {
+	initialize : function (){
+		this.loadAgenda();
+		this.bindButtons();	
+		this.bindCloseSectionView()	;
+	},
+	loadAgenda : function(){
+		$.get( php+"agenda.php", function( data ) {
+				$("#cabView div").html( data );
+				//console.log(data)
+				$(".cabinet").show();
+			});
+	},
+	bindButtons : function(){
+			$("button").click(function(){
+				$("button").removeAttr('disabled')
+				$(this).attr('disabled',true);
+				var v = $(this).html();
+				var i = this.id;
+				$("#cabView h3").html(v.toUpperCase());
+				$.get( php+this.id+".php", function( data ) {
+				$("#cabView div").html( data );
+				$(".cabinet").show();
+			});
+		})
+	},
+	
+	bindCloseSectionView : function(){
+		$("#closeViewCabinet").click(function(){
+  			$("#cabinet").hide();
+		})
+	}
+};
+
+
+
+return uiFn;
+
 });
 
-$(".cabinet").show();
-
-});
 
 
-$("#closeViewCabinet").click(function(){
-  $("#cabinet").hide();
-})
+
+
+//});
+
+
+ 
+
+//Implementation
+var exe = new erevu();
+exe.initialize();

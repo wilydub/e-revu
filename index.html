@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
 
+  <style>
+button[disabled] , .button-primary[disabled],button[disabled]:hover, .button-primary[disabled]:hover{
+    background:pink;
+    border-color: #ccc;
+    text-shadow:none;
+}
+
+</style>
+
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>ed</title>
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="drw">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -24,7 +33,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="Skeleton-2.0.4/images/favicon.png">
+  <link rel="icon"  href="Skeleton-2.0.4/images/favicon.ico">
 
 </head>
 <body>
@@ -36,7 +45,7 @@
     <div class="container" >
       <div class="row" style="margin-top:0%">
         <div class="two columns">
-           <!--<img class="" src="Skeleton-2.0.4/images/erevu_logo.png" style="margin-top:0%">-->
+           <img class="" src="Skeleton-2.0.4/images/erevu_logo.png" style="margin-top:0%">
            <h5>Cabinet DARTOIS</h5>            
         </div>
         <div class="ten columns">
@@ -46,9 +55,8 @@
           <button id="compta">Comptabilité</button>
          <h6>Enregistrer</h6>
         <!-- Primary buttons -->
-       <button class="button-primary" id="addClient">client</button>
-        <button class="button-primary" id="addDossier">affaire</button>
-        <button class="button-primary" id="addContact">contact</button>
+        <button class="button-primary" id="dossier">affaire</button>
+        <button class="button-primary" id="contact">contact</button>
         <button class="button-primary" id="files">document</button>
         </div>
       </div>
@@ -88,9 +96,12 @@
 <!-- Load JS file -->
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"  
 integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="crossorigin="anonymous"></script>
-<link rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css'/>
+
+
+<link   rel='stylesheet' href='fullcalendar-2.6.1/fullcalendar.css' />
 <script src='fullcalendar-2.6.1/lib/moment.min.js'></script>
 <script src='fullcalendar-2.6.1/fullcalendar.min.js'></script>
+<script src='fullcalendar-2.6.1/lang/fr.js'></script>
 <script src='js/ui.js'></script>
 
 

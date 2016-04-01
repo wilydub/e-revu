@@ -17,6 +17,7 @@ var uiFn = {
 		this.loadAgenda();
 		this.bindButtons();	
 		this.bindCloseSectionView()	;
+		this.bindTypeClient()	;
 	},
 	loadAgenda : function(){
 		$.get( php+"agenda.php", function( data ) {
@@ -26,7 +27,7 @@ var uiFn = {
 			});
 	},
 	bindButtons : function(){
-			$("button").click(function(){
+			$("button").unbind('click').click(function(){
 				$("button").removeAttr('disabled')
 				$(this).attr('disabled',true);
 				var v = $(this).html();
@@ -39,12 +40,12 @@ var uiFn = {
 		})
 	},
 	bindCloseSectionView : function(){
-		$("#closeViewCabinet").click(function(){
+		$("#closeViewCabinet").unbind('click').click(function(){
   			$("#cabinet").hide();
 		})
 	},
 	bindTypeClient : function(){
-		$("#typeClient").change(function(){
+		$("#typeClient").unbind('change').change(function(){
 			console.log($(this).val());
 		});
 	},

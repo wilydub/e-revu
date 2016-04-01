@@ -1,10 +1,15 @@
+
+<script>
+//**/console.log(exe.getConfFormDossier());
+exe.bindTypeClient();
+</script>
 <div class="section affaire" style="padding-top:2%" >
     <div class="container" >
-         <form>
+     <form>
  <div class="row">
 <div class="six columns">
       <label for="exampleRecipientInput">Type client</label>
-      <select class="u-full-width" id="exampleRecipientInput">
+      <select class="u-full-width" id="typeClient">
         <option value="Option 1">Personne physique</option>
         <option value="Option 2">Personne Morale</option>
         <option value="Option 3">Administration</option>
@@ -21,7 +26,7 @@
       <label for="firstname">Prénom</label>
       <input class="u-full-width" type="text" placeholder="" id="firstname">
     </div>
-    
+     
   </div>
   <label for="adresse">Adresse</label>
   <textarea class="u-full-width" placeholder="" id="adresse"></textarea>
@@ -30,9 +35,9 @@
     <span class="label-body">Send a copy to yourself</span>
   </label>
   <input class="button-primary" type="submit" value="Submit">
-</form>
+</form> 
       </div>
-    </div>
+    </div> 
   </div>
 
   <form action="" method="" id=""> 

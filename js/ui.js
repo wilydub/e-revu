@@ -6,6 +6,12 @@ var php = "php/" ;
 
 var id = {'contact':0,'affaire':0};
 
+var confFormDossier = {
+	name :'',
+	firstname:'',
+	adress:''
+}
+
 var uiFn = {
 	initialize : function (){
 		this.loadAgenda();
@@ -32,11 +38,18 @@ var uiFn = {
 			});
 		})
 	},
-	
 	bindCloseSectionView : function(){
 		$("#closeViewCabinet").click(function(){
   			$("#cabinet").hide();
 		})
+	},
+	bindTypeClient : function(){
+		$("#typeClient").change(function(){
+			console.log($(this).val());
+		});
+	},
+	getConfFormDossier : function (){
+		return confFormDossier;
 	}
 };
 
